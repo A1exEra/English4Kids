@@ -1,7 +1,7 @@
 import { cards, sectionCards } from "./cards.js";
 import { createBurgerMenu } from "./burgerMenu.js";
 import { playGame, RepeatWordBTN, starIcon } from "./playgame.js";
-
+document.body.style.overflowX = `hidden`;
 //Burger animation
 createBurgerMenu();
 
@@ -30,7 +30,7 @@ export function closeModal() {
   starIcon.replaceChildren();
   StartGameBTN.classList.add(`hidden`);
   RepeatWordBTN.classList.add(`hidden`);
-  // endGame();
+  location.reload();
   console.log(
     toggleCheckBox.checked,
     `Checkbox is unchecked and start button is hidden`
