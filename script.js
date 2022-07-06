@@ -1,9 +1,11 @@
 import { cards, sectionCards } from "./cards.js";
-import { createBurgerMenu } from "./burgerMenu.js";
+import { createBurgerMenu, generateSlideMenu } from "./burgerMenu.js";
 import { playGame, RepeatWordBTN, starIcon } from "./playgame.js";
 document.body.style.overflowX = `hidden`;
 //Burger animation
 createBurgerMenu();
+//slide menu load
+generateSlideMenu(sectionCards);
 
 //play game
 export const toggleCheckBox = document.querySelector(`#toggleCheckBox`);
@@ -79,7 +81,7 @@ function getSectionCards(sectionCards, cards) {
 //generating the main cards
 getSectionCards(sectionCards, cards);
 //generate play cards of the current  active section card
-function generatePlaycards(cardIndex, cardName) {
+export function generatePlaycards(cardIndex, cardName) {
   //////////////////////////////////////////////
   //for the playGame function invocation!!!!!!!!
   const NameOfTheCard = cardName;
@@ -115,7 +117,8 @@ function generatePlaycards(cardIndex, cardName) {
     flipCard.addEventListener(`click`, (e) => {
       e.preventDefault();
       console.log(`flip is clicked`);
-      displayCard.style.transform = "rotateY(360deg)";
+      // displayCard.style.transform = "rotateY(360deg)";
+      displayCard.classList.add(`card_isFlipped`);
       cardWord.innerText = el.translation;
       playWordBtn.classList.add(`hidden`);
       flipCard.classList.add(`hidden`);
@@ -123,7 +126,7 @@ function generatePlaycards(cardIndex, cardName) {
     displayCard.addEventListener(`mouseleave`, (e) => {
       e.preventDefault();
       console.log(`mouseout`);
-      displayCard.style.transform = "rotateY(-360deg)";
+      // displayCard.style.transform = "rotateY(-360deg)";
       displayCard.classList.remove(`card_isFlipped`);
       cardWord.innerText = el.word;
       playWordBtn.classList.remove(`hidden`);
@@ -168,29 +171,3 @@ function generatePlaycards(cardIndex, cardName) {
   });
   // console.log(cardsContainer);
 }
-// https://source.unsplash.com/random/300x300?v=10
-//./Misc/${cards[imgCounter][imgCounter].image}
-///////////////////////////////////////////////////
-// generate random array
-// const randomArray = (length, max) =>
-//   Array(8)
-//     .fill()
-//     .map(() => Math.round(Math.random() * 7));
-// console.log(randomArray());
-// function playGame(sectionCardName) {
-//   const random_array = new Array(8)
-//     .fill()
-//     .map((a, i) => (a = i))
-//     .sort(() => Math.random() - 0.5);
-//   console.log(random_array);
-//   // console.log(cards[sectionCards.indexOf(sectionCardName)]);
-//   cards[sectionCards.indexOf(sectionCardName)].forEach((el) => {
-//     console.log(el.audioSrc);
-//   });
-// }
-// window.addEventListener(`click`, (e) => {
-//   let cardName = e.target.innerText;
-//   let slicedCard = cardName.split(`8`).shift().slice(0, -1);
-//   console.log(slicedCard, [...slicedCard]);
-//   console.dir(e.target.parentNode.innerText);
-// });
