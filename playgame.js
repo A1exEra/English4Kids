@@ -9,7 +9,7 @@ export const RepeatWordBTN = document.querySelector(`.RepeatWordBTN`);
 export const starIcon = document.querySelector(`.starIcon`);
 //end game//////////////////
 export function endGame(audio, message) {
-  document.body.style.overflow = `hidden`;
+  // document.body.style.overflow = `hidden`;
   const endGameAudio = new Audio(`./Misc/audio/${audio}.mp3`);
   endGameAudio.play();
   const endGame = document.querySelector(`.endGame`);
