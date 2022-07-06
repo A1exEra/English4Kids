@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" class="src" />
+    <link rel="stylesheet" href="./honeycombMain.css" class="src" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/60a5080843.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer type="module"></script>
+    <title>English 4 Kids</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-brand"
+        ><p class="navbar-brand">English 4 Kids</p></a
+      >
+      <div class="popupContainer" id="navLinks">
+        <ul class="popup">
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Action (set A)</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Action (set B)</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Animal (set A)</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Animal (set B)</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Clothes</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Emotions</a>
+          </li>
+          <li class="nav_list">
+            <a href="" class="nav_link">Outdoors</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Anatomy</a>
+          </li>
+          <li class="nav_list">
+            <a href="./palyGame.html" class="nav_link">Stats</a>
+          </li>
+        </ul>
+      </div>
+      <div class="switchAndBurger">
+        <div class="burger" id="burgerBtn">
+          <div class="bar top"></div>
+          <div class="bar middle"></div>
+          <div class="bar bottom"></div>
+        </div>
+      </div>
+    </nav>
+    <div class="heading">
+      <div id="headingGroup" class="heading-container">
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+        <h1 class="">ENGLISH<span>/</span>FOR<span>/</span>KIDS</h1>
+      </div>
+      <div class="heading-container">
+        <img
+          class="heading-image"
+          src="./Misc/img/hand2.png"
+          alt="heading image"
+        />
+      </div>
+    </div>
+    <!-- Content/Honeycomb section -->
+    <div class="mainContainer">
+      <ul class="honeycomb">
+        <li class="honeycomb-cell honeycomb_hidden"></li>
+      </ul>
+    </div>
+    <!-- end of the main content div!!! -->
+    <div class="modal hidden">
+      <button class="close_modal">&times;</button>
+      <div class="playMenu">
+        <button class="StartGameBTN hidden" id="btn-start">Play</button>
+        <button class="RepeatWordBTN hidden" id="btn-start">Repeat</button>
+        <label class="switch">
+          <input type="checkbox" id="toggleCheckBox" />
+          <div class="slider"></div>
+        </label>
+        <section class="starIcon"></section>
+      </div>
+      <hr />
+      <h2 class="modalHeading"></h2>
+      <div class="cardsContainer"></div>
+    </div>
+    <div class="endGame hidden">
+      <h2 id="message">GAME OVER!</h2>
+      <img src="./Misc/img/Jonny.jpg" alt="Game Over" />
+    </div>
+    <footer id="footer">
+      <h2>&copy; Alex Eramisant / June 2022</h2>
+    </footer>
+  </body>
+</html>
