@@ -24,6 +24,9 @@ export function endGame(audio, message) {
   });
 }
 ///////////////////////////////////////////////
+let totalScore = 0;
+let correctGuess = 0;
+let wrongGuess = 0;
 export function playGame(sectionCardName) {
   /////START PLAY BUTTON CLICKCEVENT/////
   StartGameBTN.addEventListener(`click`, (e) => {
@@ -48,9 +51,6 @@ export function playGame(sectionCardName) {
     });
     console.log(randomAudioArray);
     ///////////////////////////////////
-    let totalScore = 0;
-    let correctGuess = 0;
-    let wrongGuess = 0;
     ///////////////////////////////////
     console.log(`Let the games begin!`);
     StartGameBTN.classList.add(`hidden`);
@@ -63,9 +63,11 @@ export function playGame(sectionCardName) {
     });
     audio.play();
     console.log(audio, randomAudioArray[totalScore]);
+
     if (totalScore < 8) {
       cardsContainer.addEventListener(`click`, (e) => {
         e.preventDefault();
+        console.dir(starIcon.children.length);
         if (e.target.classList.value === `displayCard`) {
           /////////////////////////////////////////////////
           const correctStar = document.createElement(`img`);
@@ -79,43 +81,14 @@ export function playGame(sectionCardName) {
           console.dir(e.target.classList.value);
           //////////////////////////////////////
           /////////////////////////////////////
-          if (totalScore === 8 && correctGuess === 8) {
-            console.log(`You WON!!!!!!!!`);
-            if (!toggleCheckBox.checked) {
-              youWINAudio.pause();
-              // youLOSTAudio.pause();
-            }
-            // youWINAudio.play();
-            RepeatWordBTN.classList.add(`hidden`);
-            toggleCheckBox.checked = false;
-            console.log(toggleCheckBox.checked);
-            starIcon.replaceChildren();
-            totalScore = 0;
-            randomAudioArray = [];
-            endGame(`success`, `YOU WON!!!`);
-            return;
-          }
-          if (totalScore === 8 && correctGuess !== 8) {
-            console.log(`You LOST!!!!!!!!`);
-            if (!toggleCheckBox.checked) {
-              // youWINAudio.pause();
-              youLOSTAudio.pause();
-            }
-            // youLOSTAudio.play();
-            RepeatWordBTN.classList.add(`hidden`);
-            toggleCheckBox.checked = false;
-            console.log(toggleCheckBox.checked);
-            starIcon.replaceChildren();
-            totalScore = 0;
-            randomAudioArray = [];
-            endGame(`failure`, `YOU LOST :-(`);
-            return;
-          }
+
           /////////////////////////////////////
           /////////////////////////////////////
           if (
             randomAudioArray[totalScore].slice(6, -4) === e.target.textContent
           ) {
+            e.target.classList.add(`hidden`);
+            e.target.style.opacity = 0.2;
             correctAudioMessage.play();
             totalScore++;
             starIcon.append(correctStar);
@@ -133,6 +106,33 @@ export function playGame(sectionCardName) {
             console.log(totalScore, `total score`);
             audio.play();
             console.log(`Wrong`, wrongGuess);
+          }
+          ////////////////////////////////////check win/lost condition
+          if (starIcon.children.length === 8 && correctGuess === 8) {
+            console.log(`You WON!!!!!!!!`);
+            if (!toggleCheckBox.checked) {
+              youWINAudio.pause();
+            }
+            RepeatWordBTN.classList.add(`hidden`);
+            toggleCheckBox.checked = false;
+            console.log(toggleCheckBox.checked);
+            starIcon.replaceChildren();
+            totalScore = 0;
+            randomAudioArray = [];
+            return endGame(`success`, `YOU WON!!!`);
+          }
+          if (starIcon.children.length === 8 && correctGuess < 8) {
+            console.log(`You LOST!!!!!!!!`);
+            if (!toggleCheckBox.checked) {
+              youLOSTAudio.pause();
+            }
+            RepeatWordBTN.classList.add(`hidden`);
+            toggleCheckBox.checked = false;
+            console.log(toggleCheckBox.checked);
+            starIcon.replaceChildren();
+            totalScore = 0;
+            randomAudioArray = [];
+            return endGame(`failure`, `YOU LOST :-(`);
           }
         }
         e.stopImmediatePropagation();

@@ -1,3 +1,4 @@
+export { cards, sectionCards };
 const sectionCards = [
   "Action (set A)",
   "Action (set B)",
@@ -9,16 +10,6 @@ const sectionCards = [
   "Anatomy",
 ];
 const cards = [
-  // [
-  //   "Action (set A)",
-  //   "Action (set B)",
-  //   "Animal (set A)",
-  //   "Animal (set B)",
-  //   "Clothes",
-  //   "Emotions",
-  //   "Outdoors",
-  //   "Science",
-  // ],
   [
     {
       word: "cry",
@@ -421,5 +412,3 @@ const cards = [
     },
   ],
 ];
-
-export { cards, sectionCards };

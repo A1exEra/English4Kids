@@ -121,7 +121,7 @@ input:checked + .slider:after {
   list-style-type: none;
   background-color: rgb(222, 192, 222);
   margin: 0px;
-  padding: 50px 0px 50px 20px;
+  padding: 20px 0px 40px 20px;
   position: absolute;
   width: 320px;
   top: 3rem;
@@ -131,8 +131,8 @@ input:checked + .slider:after {
   overflow-x: hidden;
 }
 .popup li {
-  margin: 0px;
-  padding: 10px;
+  margin: 20px 0px;
+  padding: 0px;
   font-size: 1.5rem;
 }
 .popup li a {
@@ -150,6 +150,15 @@ input:checked + .slider:after {
 .slide-navbar {
   right: 0px;
   opacity: 1;
+}
+.icons {
+  padding: 0px;
+  margin-left: 20px;
+  text-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.5);
+}
+.icons:hover {
+  color: #fff;
+  cursor: pointer;
 }
 /* slide-menu end */
 /* navbar styling start*/
@@ -247,12 +256,13 @@ p {
   top: 10vh;
   left: 5vw; */
   width: 90%;
-  max-height: 95%;
+  max-height: 90%;
   /* height: fit-content; */
   background-color: #f5d9d5;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
+  border: 1px solid black;
   box-shadow: 0 3rem 5rem #000;
   z-index: 14;
   overflow-y: auto;
@@ -308,16 +318,17 @@ p {
   backface-visibility: hidden;
   perspective: 1000px;
 }
-/* flip the card */
-.card_isFlipped {
-  transform: rotateY(360deg);
-}
 .displayCard:hover {
   opacity: 1;
-  transform: scale(1.1);
+  width: 255px;
+  height: 255px;
   box-shadow: 3px 2.3px 10.8px -32px rgba(0, 0, 0, 0.097),
     10.1px 7.8px 18.4px -32px rgba(0, 0, 0, 0.143),
     45px 35px 42px -32px rgba(0, 0, 0, 0.24);
+}
+/* flip the card */
+.card_isFlipped {
+  transform: rotateY(360deg);
 }
 .displayCard button {
   width: 50px;
@@ -401,29 +412,6 @@ p {
 .StartGameBTN:focus {
   outline: 0.5;
 }
-/* .RepeatWordBTN {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 10px;
-  width: 150px;
-  background-color: #ffed66;
-  padding: 15px 40px;
-  border: none;
-  border-radius: 30px;
-  font-size: 20px;
-  font-family: Nunito, sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ea1c2c;
-  text-align: center;
-  box-shadow: 0 3px 0 #ea1c2c;
-  cursor: pointer;
-  transition: all 100ms linear;
-} */
-
 .RepeatWordBTN:hover {
   transform: translate(-50%, -50%);
   font-size: 22px;
@@ -466,6 +454,9 @@ p {
 }
 /* END-GAME-MODAL END */
 /* Footer Start */
+.padding {
+  height: 6rem;
+}
 footer {
   position: fixed;
   bottom: 0;
@@ -476,7 +467,7 @@ footer {
   display: flex;
   justify-content: space-between;
   background-color: rgb(222, 192, 222);
-  z-index: 1;
+  z-index: 5;
 }
 footer h2 {
   color: #ea1c2c;
