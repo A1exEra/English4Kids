@@ -10,7 +10,7 @@ popup.addEventListener(`click`, (e) => {
   const el = e.target.textContent;
   console.dir(el);
   console.log(i);
-  generatePlaycards(i, el);
+  generatePlaycards(1, el);
 });
 generateSlideMenu(sectionCards);
 //play game
