@@ -1,12 +1,18 @@
 import { cards, sectionCards } from "./cards.js";
-import { createBurgerMenu, generateSlideMenu } from "./burgerMenu.js";
+import { createBurgerMenu, popup, generateSlideMenu } from "./burgerMenu.js";
 import { playGame, RepeatWordBTN, starIcon } from "./playgame.js";
-document.body.style.overflowX = `hidden`;
 //Burger animation
 createBurgerMenu();
 //slide menu load
+popup.addEventListener(`click`, (e) => {
+  e.preventDefault();
+  const i = sectionCards.indexOf(e.target.textContent);
+  const el = e.target.textContent;
+  console.dir(el);
+  console.log(i);
+  generatePlaycards(i, el);
+});
 generateSlideMenu(sectionCards);
-
 //play game
 export const toggleCheckBox = document.querySelector(`#toggleCheckBox`);
 export const StartGameBTN = document.querySelector(`.StartGameBTN`);
@@ -42,7 +48,7 @@ closeBtnModal.addEventListener(`click`, function (e) {
   e.preventDefault();
   closeModal();
 });
-
+////////////////////////////////////////////
 //Creating the section cards//////////////////
 function getSectionCards(sectionCards, cards) {
   const cardsFragment = new DocumentFragment();
@@ -80,6 +86,7 @@ function getSectionCards(sectionCards, cards) {
 }
 //generating the main cards
 getSectionCards(sectionCards, cards);
+///////////////////////////////////////////
 //generate play cards of the current  active section card
 export function generatePlaycards(cardIndex, cardName) {
   //////////////////////////////////////////////

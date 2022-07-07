@@ -116,6 +116,8 @@ export function playGame(sectionCardName) {
           if (
             randomAudioArray[totalScore].slice(6, -4) === e.target.textContent
           ) {
+            e.target.classList.add(`hidden`);
+            e.target.style.opacity = 0.2;
             correctAudioMessage.play();
             totalScore++;
             starIcon.append(correctStar);

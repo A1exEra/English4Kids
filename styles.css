@@ -151,6 +151,15 @@ input:checked + .slider:after {
   right: 0px;
   opacity: 1;
 }
+.icons {
+  padding: 0px;
+  margin-left: 20px;
+  text-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.5);
+}
+.icons:hover {
+  color: #fff;
+  cursor: pointer;
+}
 /* slide-menu end */
 /* navbar styling start*/
 .switchAndBurger {
@@ -247,12 +256,13 @@ p {
   top: 10vh;
   left: 5vw; */
   width: 90%;
-  max-height: 95%;
+  max-height: 90%;
   /* height: fit-content; */
   background-color: #f5d9d5;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
+  border: 1px solid black;
   box-shadow: 0 3rem 5rem #000;
   z-index: 14;
   overflow-y: auto;
