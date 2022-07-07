@@ -10,7 +10,9 @@ popup.addEventListener(`click`, (e) => {
   const el = e.target.textContent;
   console.dir(el);
   console.log(i);
-  generatePlaycards(1, el);
+  return i === -1
+    ? console.log(`Wrong Index! Try Again...`)
+    : generatePlaycards(i, el);
 });
 generateSlideMenu(sectionCards);
 //play game
