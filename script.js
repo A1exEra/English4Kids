@@ -78,10 +78,6 @@ function getSectionCards(sectionCards, cards) {
     honeycombCell.addEventListener(`click`, (e) => {
       e.preventDefault();
       console.log(`cell clicked`);
-      document.body.append(overlay);
-      modal.classList.remove(`hidden`);
-      overlay.classList.remove(`hidden`);
-      document.body.overflow = `hidden`;
       generatePlaycards(i, el);
     });
   });
@@ -97,6 +93,9 @@ export function generatePlaycards(cardIndex, cardName) {
   console.log(NameOfTheCard);
   playGame(NameOfTheCard);
   /////////////////////////////////////////////////
+  document.body.append(overlay);
+  modal.classList.remove(`hidden`);
+  overlay.classList.remove(`hidden`);
   document.body.style.overflow = `hidden`;
   /////////////////////////////////////////////////
   const generatePlaycardsFragment = new DocumentFragment();
@@ -108,12 +107,16 @@ export function generatePlaycards(cardIndex, cardName) {
     // console.log(el.word);
     const playWordBtn = document.createElement(`button`);
     playWordBtn.classList.add(`audioWord`);
-    playWordBtn.innerHTML = `<i class="fas fa-music"></i>`;
+    playWordBtn.innerHTML = `<span class="material-symbols-outlined">
+    music_note
+    </span>`;
     const cardWord = document.createElement(`p`);
     cardWord.innerHTML = el.word;
     const flipCard = document.createElement(`button`);
     flipCard.classList.add(`flipCard`);
-    flipCard.innerHTML = `<i class="fa fa-rotate-left"></i>`;
+    flipCard.innerHTML = `<span class="material-symbols-outlined">
+    replay
+    </span>`;
     displayCard.append(playWordBtn, cardWord, flipCard);
     generatePlaycardsFragment.append(displayCard);
     //play audio
