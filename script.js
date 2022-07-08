@@ -107,16 +107,12 @@ export function generatePlaycards(cardIndex, cardName) {
     // console.log(el.word);
     const playWordBtn = document.createElement(`button`);
     playWordBtn.classList.add(`audioWord`);
-    playWordBtn.innerHTML = `<span class="material-symbols-outlined">
-    music_note
-    </span>`;
+    playWordBtn.innerHTML = `<i class="fas fa-music"></i>`;
     const cardWord = document.createElement(`p`);
     cardWord.innerHTML = el.word;
     const flipCard = document.createElement(`button`);
     flipCard.classList.add(`flipCard`);
-    flipCard.innerHTML = `<span class="material-symbols-outlined">
-    replay
-    </span>`;
+    flipCard.innerHTML = `<i class="fa fa-rotate-left"></i>`;
     displayCard.append(playWordBtn, cardWord, flipCard);
     generatePlaycardsFragment.append(displayCard);
     //play audio

@@ -77,7 +77,7 @@ export function playGame(sectionCardName) {
           wrongStar.classList.add(`star`);
           wrongStar.src = `./Misc/img/star.svg`;
           console.log(`CARD IS CLICKED`);
-          console.dir(`${e.target.textContent}-was clicked`);
+          console.dir(e.target);
           console.dir(e.target.classList.value);
           //////////////////////////////////////
           /////////////////////////////////////
